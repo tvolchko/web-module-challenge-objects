@@ -183,7 +183,7 @@ Use the getReviewsByRating function below to do the following:
     return these
     /* code here */
   }
-  console.log(getReviewByRating(reviews, 4))
+  // console.log(getReviewByRating(reviews, 4))
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
@@ -199,10 +199,18 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(array) {
+    let long = []
+    for (let i = 0; i<array.length; i++){
+      
+      if(array[i].feedback.split(' ').length >= 15){
+        long.push(array[i])
+      }
+    }
+    return long
   }
-  
+  console.log('stetch test')
+  // console.log(getLongReviews(reviews))
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
 This stretch goal does not use the reviews data!  You create your own object in this stretch goal.
@@ -222,11 +230,19 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(odo) {
+  let newCar = {
+    odometer: odo,
+    drive: function(miles){
+      this.odometer += miles
+    }
+  }
+  return newCar
 }
-
+let car1 = carMaker(10)
+// console.log(car1)
+car1.drive(100)
+console.log(car1.odometer)
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo(){
